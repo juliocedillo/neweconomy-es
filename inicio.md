@@ -19,7 +19,7 @@ Armando Lara-Millán está escribiendo un libro titulado tentativamente The Firm
 
 ---
 
-|Meta|Método**|Impacto|
+|Meta|Método|Impacto|
 |---|---|---|
 |Nuestro proyecto investiga el fin de la mano de obra barata en China y el dinero fácil en Silicon Valley, las exploraciones desesperadas de depósitos de cobre y litio en antiguos campos de petróleo y carbón, hasta los juegos de lenguaje de los banquero centrales en Jackson Hole y el Banco Central Europeo.|Tejiendo etnografías de firmas clave de gestión de activos, entrevistas con empleadores y empleados en sectores clave de todo el mundo, y procesamiento de lenguaje natural de décadas de informes trimestrales de todas las principales corporaciones, el proyecto *El Futuro de la Economía Global* trabaja para entender cómo un nuevo orden global está luchando por nacer en el presente.|Al historicizar los últimos 40 años, se entrelazan argumentos dispares sobre el “neoliberalismo”, la “financiarización” y la “hiperglobalización”. De este modo, esperamos dar sentido a nuestra “policrisis” contemporánea y comprender cómo un nuevo orden global está luchando por nacer en el presente.|
 
@@ -32,11 +32,11 @@ Armando Lara-Millán está escribiendo un libro titulado tentativamente The Firm
 <!-- HTML for the Carousel -->
 <div class="carousel">
   <div class="carousel-container">
-    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy/assets/images/q1.png" alt="Image 1">
-    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy/assets/images/q2.png" alt="Image 2">
-    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy/assets/images/q3.png" alt="Image 3">
-    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy/assets/images/q4.png" alt="Image 4">
-    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy/assets/images/q5.png" alt="Image 5">
+    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy-es/assets/images/q1_es.png" alt="Image 1">
+    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy-es/assets/images/q2_es.png" alt="Image 2">
+    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy-es/assets/images/q3_es.png" alt="Image 3">
+    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy-es/assets/images/q4_es.png" alt="Image 4">
+    <img class="carousel-slide" src="https://juliocedillo.github.io/neweconomy-es/assets/images/q5_es.png" alt="Image 5">
   </div>
   <button class="carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
   <button class="carousel-next" onclick="moveSlide(1)">&#10095;</button>
@@ -45,12 +45,10 @@ Armando Lara-Millán está escribiendo un libro titulado tentativamente The Firm
 <!-- CSS for styling the Carousel -->
 <style>
   .carousel {
-    position: relative;
-    max-width: 800px;
-    margin: auto;
-    overflow: hidden;
-    display: flex; 
-    justify-content: center; 
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
   }
 
   .carousel-container {
@@ -94,7 +92,19 @@ Armando Lara-Millán está escribiendo un libro titulado tentativamente The Firm
 
     currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
 
-    const slideWidth = slides[0].offsetWidth;  // 800px in this case
-    document.querySelector('.carousel-container').style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    updateSlidePosition();
   }
+
+  function updateSlidePosition() {
+    const slides = document.querySelectorAll('.carousel-slide');
+    if (slides.length === 0) return;
+    const slideWidth = slides[0].offsetWidth;
+    document.querySelector('.carousel-container').style.transform =
+      `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  // Ensure layout is calculated before applying transform
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(updateSlidePosition, 100);
+  });
 </script>
