@@ -102,3 +102,8 @@ footer a:active {
   color: #fff;    
   background-color: #555;
 }
+
+footer a:visited {
+  color: #fff;
+  text-decoration: none;
+}
