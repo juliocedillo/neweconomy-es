@@ -34,12 +34,12 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff; 
-  text-decoration: none;
+  color: #fff; /* Set your preferred color for unvisited links */
+  text-decoration: none; /* Optional: removes underline */
 }
 
 nav ul li a:visited {
-  color: #fff;
+  color: #fff; /* Change this to your preferred color for visited links */
 }
 
 main {
@@ -101,18 +101,4 @@ footer a:hover,
 footer a:active {
   color: #fff;    
   background-color: #555;
-}
-
-footer a:visited {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-left {
-  display: flex;
-  align-items: center;
-}
-
-.footer-left img {
-  margin-right: 10px;
 }
