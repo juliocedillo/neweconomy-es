@@ -107,3 +107,12 @@ footer a:visited {
   color: #fff;
   text-decoration: none;
 }
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-left img {
+  margin-right: 10px;
+}
