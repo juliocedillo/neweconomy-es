@@ -17,7 +17,11 @@ Estamos analizando tres sectores del Estándar de Clasificación Industrial Glob
 
 ---
 
-_En preparación_
+Nuestro enfoque consiste en aprovechar técnicas de Procesamiento del Lenguaje Natural (PLN) para analizar sistemáticamente las menciones de "China" o "chino" dentro de las transcripciones de llamadas financieras. Las oraciones relevantes fueron convertidas en representaciones numéricas (embeddings) utilizando un modelo BERT preentrenado—específicamente, `sentence-transformers/all-distilroberta-v1`—para capturar su significado semántico.
+
+Para evaluar el sentimiento, se definieron "ejes semánticos" personalizados para conceptos clave como Sentimiento Económico y Costos Laborales, contrastando conjuntos de frases positivas (por ejemplo, "fuerte crecimiento económico") con frases negativas (por ejemplo, "recesión económica"). La puntuación de sentimiento se realizó calculando la similitud del coseno de cada oración con respecto a estos ejes.
+
+Para garantizar la solidez del análisis, las tendencias de sentimiento derivadas de estos ejes personalizados se compararon con los resultados de FinBERT, un modelo de sentimiento específico para finanzas. Finalmente, los puntajes promedio de sentimiento se visualizan a lo largo del tiempo para seguir los cambios en el discurso corporativo.
 
 # Entrevistas en Profundidad
 
