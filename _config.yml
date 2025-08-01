@@ -4,4 +4,4 @@ theme: jekyll-theme-slate
 markdown: kramdown
 url: "https://juliocedillo.github.io"
 baseurl: "/neweconomy-es"
-logo: "assets/images/seal.ico"
+logo: "https://juliocedillo.github.io/neweconomy/assets/images/seal.ico"
